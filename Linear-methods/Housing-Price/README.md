@@ -1,0 +1,10 @@
+## Housing Price
+This project is an exercise to practice different skills and train regression models to predict housing prices.
+### Overview
+This project is based on the Linear Regression exercise of my Machine Learning lecture. I tailor-made the project to learn additional topics and practice more. 
+### Dataset
+The data in this project is artificially generated. By running the file `data_generator.py` 100,000 data points will be generated. It has 8 columns which includes 7 features size of the house, number of the rooms, number of the bathrooms, age of the house, distance to the city center, having an elevator, and floor's number. The last column is the price of the house. After storing the generated data in PostgreSQL, some cleaning processes are applied to the data and the final dataset is saved in the table called `clean_data_housing`.
+### How to run
+First the files called `create_raw_table.sql` should be run in PostgreSQL to create the `raw_data_housing` table. Be aware that a database called `Housing_Price` should already exist. Then by running `data_generator.py` the raw data will be stored in the table. But before running this file make sure to change the `connection_string` variable on line 116 based on your PostgreSQL information. You can run this file simple by running the command `python data_generator.py` in the terminal. Now is time to do some data cleaning by simply running `data_cleaning.sql` in PostgreSQL. After these steps are done, other files can be run. It is needed to fill out the argument for `connection_string` in the files `analytical_linear_regression.ipynb`, `regularized_linear_regression.ipynb`, `torch_main.py`, `visualize_data.py` before running them.
+### Results
+The Linear Regression models using different methods learn the relationship between the features and the labels successfully.
